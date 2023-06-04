@@ -6,7 +6,7 @@
 #    By: corellan <corellan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/04 15:51:15 by corellan          #+#    #+#              #
-#    Updated: 2023/06/04 15:56:45 by corellan         ###   ########.fr        #
+#    Updated: 2023/06/04 16:01:34 by corellan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,8 +25,8 @@ all: $(NAME)
 $(NAME): $(OBJ)
 		$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 
-$(OBJ)
-		$(CC) $(FLAGS) $(SRC) -c $(OBJ)
+%.o: %.c
+		$(CC) $(FLAGS) -I. -c $< -o $@
 
 clean:
 		rm -f $(OBJ)

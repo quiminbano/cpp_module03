@@ -6,13 +6,13 @@
 /*   By: corellan <corellan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 13:48:46 by corellan          #+#    #+#             */
-/*   Updated: 2023/06/04 15:47:23 by corellan         ###   ########.fr       */
+/*   Updated: 2023/06/04 18:04:10 by corellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(void) : _HitPoints(10), _EnergyPoints(10), _AttackDamage(0), _Name("unknown")
+ClapTrap::ClapTrap(void) : _HitPoints(10), _EnergyPoints(10), _AttackDamage(0), _Name("unknown"), _DeathCounter(0)
 {
 	std::cout << "Default constructor for ClapTrap was called." << std::endl;
 	return ;
@@ -25,7 +25,7 @@ ClapTrap::ClapTrap(ClapTrap const &rhs)
 	return ;
 }
 
-ClapTrap::ClapTrap(std::string name) : _HitPoints(10), _EnergyPoints(10), _AttackDamage(0), _Name(name)
+ClapTrap::ClapTrap(std::string name) : _HitPoints(10), _EnergyPoints(10), _AttackDamage(0), _Name(name), _DeathCounter(0)
 {
 	std::cout << "ClapTrap constructor was called by the user " << _Name << "." << std::endl;
 	return ;
@@ -63,7 +63,13 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	damage = static_cast<int>(amount);
 	if (this->_HitPoints == 0)
 	{
-		std::cout << "ClapTrap " << this->_Name << " is already dead. Stop dude!!" << std::endl;
+		if (this->_DeathCounter > 0 && this->_DeathCounter < 3)
+			std::cout << "ClapTrap " << this->_Name << " is already dead. it is not necessary to continue hitting " << _Name << "!!" << std::endl;
+		else if (this->_DeathCounter > 2 && this->_DeathCounter < 5)
+			std::cout << "ClapTrap " << this->_Name << " is ALREADY dead. Stop dude please!!" << std::endl;
+		else
+			std::cout << "ClapTrap " << this->_Name << " IS ALREADY DEAD. JESUS CHRIST. DO YOU HAVE RESPECT FOR DEAD BODDIES? STOP HITTING THE F$#@ING CORPSE NOW" << std::endl;
+		(this->_DeathCounter)++;
 		return ;
 	}
 	std::cout << "ClapTrap " << this->_Name << " received " << amount << " points of damage!" << std::endl;
@@ -71,6 +77,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	{
 		this->_HitPoints = 0;
 		std::cout << "ClapTrap " << this->_Name << " is dead. Oh no.!!" << std::endl;
+		(this->_DeathCounter)++;
 	}
 	else
 		this->_HitPoints -= damage;
@@ -79,6 +86,11 @@ void	ClapTrap::takeDamage(unsigned int amount)
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
+	if (this->_HitPoints == 0)
+	{
+		std::cout << "ClapTrap " << this->_Name << " is already dead. It can't be healed!!" << std::endl;
+		return ;
+	}
 	if (this->_EnergyPoints > 0)
 	{
 		this->_EnergyPoints -= 1;
