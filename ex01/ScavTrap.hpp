@@ -6,7 +6,7 @@
 /*   By: corellan <corellan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 12:00:49 by corellan          #+#    #+#             */
-/*   Updated: 2023/06/05 16:41:08 by corellan         ###   ########.fr       */
+/*   Updated: 2023/06/05 21:22:22 by corellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 class	ScavTrap : public ClapTrap
 {
+public:
 	ScavTrap(void);
 	ScavTrap(ScavTrap const &rhs);
 	~ScavTrap(void);
