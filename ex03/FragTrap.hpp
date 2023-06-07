@@ -6,7 +6,7 @@
 /*   By: corellan <corellan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 14:46:24 by corellan          #+#    #+#             */
-/*   Updated: 2023/06/06 19:00:24 by corellan         ###   ########.fr       */
+/*   Updated: 2023/06/07 16:53:06 by corellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "ClapTrap.hpp"
 
-class	FragTrap : virtual ClapTrap
+class	FragTrap : public virtual ClapTrap
 {
 public:
 

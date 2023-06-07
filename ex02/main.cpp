@@ -6,7 +6,7 @@
 /*   By: corellan <corellan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 15:48:09 by corellan          #+#    #+#             */
-/*   Updated: 2023/06/06 16:28:20 by corellan         ###   ########.fr       */
+/*   Updated: 2023/06/07 17:11:30 by corellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,15 @@ int	main(void)
 	std::cout << std::endl;
 	ossi.setAttackDamage(20);
 	ossi.attack("Roboto");
-	robot.takeDamage(20);
+	robot.takeDamage(ossi.getAttackDamage());
 	robot.beRepaired(10);
 	savior.attack("Roboto");
-	robot.takeDamage(30);
+	robot.takeDamage(savior.getAttackDamage());
 	savior.highFiveGuys();
 	ossi.attack("Roboto");
-	robot.takeDamage(20);
+	robot.takeDamage(ossi.getAttackDamage());
 	savior.attack("Roboto");
-	robot.takeDamage(30);
+	robot.takeDamage(savior.getAttackDamage());
 	robot.guardGate();
 	ossi.attack("Roboto");
 	robot.guardGate();

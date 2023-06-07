@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ClapTrap
+NAME = claptrap
 
 SRC = ClapTrap.cpp main.cpp
 

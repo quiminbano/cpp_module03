@@ -6,7 +6,7 @@
 /*   By: corellan <corellan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 18:46:30 by corellan          #+#    #+#             */
-/*   Updated: 2023/06/06 18:56:30 by corellan         ###   ########.fr       */
+/*   Updated: 2023/06/06 23:13:59 by corellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,22 @@
 # include "ScavTrap.hpp"
 # include "FragTrap.hpp"
 
-class DiamondTrap
+class DiamondTrap : public ScavTrap, public FragTrap
 {
+public:
 
+	DiamondTrap(void);
+	DiamondTrap(std::string name);
+	DiamondTrap(DiamondTrap const &rhs);
+	~DiamondTrap(void);
+
+	DiamondTrap	&operator=(DiamondTrap const &rhs);
+
+	void	whoAmI(void);
+
+private:
+
+	std::string	_Name;
 };
 
 #endif
