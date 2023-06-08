@@ -6,7 +6,7 @@
 /*   By: corellan <corellan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 13:33:53 by corellan          #+#    #+#             */
-/*   Updated: 2023/06/04 16:20:28 by corellan         ###   ########.fr       */
+/*   Updated: 2023/06/08 10:30:21 by corellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,11 @@ public:
 	
 private:
 
-	int				_HitPoints;
-	int				_EnergyPoints;
-	int				_DeathCounter;
-	unsigned int	_AttackDamage;
-	std::string		_Name;
+	int				_hitPoints;
+	int				_energyPoints;
+	int				_deathCounter;
+	unsigned int	_attackDamage;
+	std::string		_name;
 };
 
 #endif

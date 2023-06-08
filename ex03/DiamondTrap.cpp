@@ -6,29 +6,29 @@
 /*   By: corellan <corellan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 23:08:18 by corellan          #+#    #+#             */
-/*   Updated: 2023/06/07 09:58:13 by corellan         ###   ########.fr       */
+/*   Updated: 2023/06/08 10:55:43 by corellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(void) : _Name("unknown")
+DiamondTrap::DiamondTrap(void) : ClapTrap("unknown_clap_name"), _name("unknown")
 {
 	std::cout << "Default constructor for DiamondTrap was called." << std::endl;
-	this->_HitPoints = 100;
-	this->_EnergyPoints = 50;
-	this->_AttackDamage = 30;
-	this->_MaxHP = 100;
+	this->_hitPoints = 100;
+	this->_energyPoints = 50;
+	this->_attackDamage = 30;
+	this->_maxHP = 100;
 	return ;
 }
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), _Name(name)
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), _name(name)
 {
-	std::cout << "DiamondTrap constructor was called by the user " << _Name << "." << std::endl;
-	this->_HitPoints = 100;
-	this->_EnergyPoints = 50;
-	this->_AttackDamage = 30;
-	this->_MaxHP = 100;
+	std::cout << "DiamondTrap constructor was called by the user " << this->_name << "." << std::endl;
+	this->_hitPoints = 100;
+	this->_energyPoints = 50;
+	this->_attackDamage = 30;
+	this->_maxHP = 100;
 	return ;
 }
 
@@ -54,6 +54,6 @@ DiamondTrap	&DiamondTrap::operator=(DiamondTrap const &rhs)
 
 void	DiamondTrap::whoAmI(void)
 {
-	std::cout << "DiamondTrap is " << this->_Name << ". But also is " << this->ClapTrap::_Name << std::endl;
+	std::cout << "DiamondTrap is " << this->_name << ". But also is " << this->ClapTrap::_name << std::endl;
 	return ;
 }

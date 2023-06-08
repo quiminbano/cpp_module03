@@ -6,7 +6,7 @@
 #    By: corellan <corellan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/04 15:51:15 by corellan          #+#    #+#              #
-#    Updated: 2023/06/07 16:43:29 by corellan         ###   ########.fr        #
+#    Updated: 2023/06/08 11:01:46 by corellan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRC = ClapTrap.cpp main.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-FLAGS = -Wall -Wextra -Werror -std=c++98 -Wshadow -Wno-shadow
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 CC = c++
 

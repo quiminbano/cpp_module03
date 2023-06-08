@@ -6,7 +6,7 @@
 /*   By: corellan <corellan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 18:46:30 by corellan          #+#    #+#             */
-/*   Updated: 2023/06/06 23:13:59 by corellan         ###   ########.fr       */
+/*   Updated: 2023/06/08 10:52:56 by corellan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ public:
 
 private:
 
-	std::string	_Name;
+	std::string	_name;
 };
 
 #endif
